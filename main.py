@@ -14,17 +14,17 @@ from gi.repository import GObject
 # class
 class Dummy():
     # constructor
-    def __init__(self, *args):
+    def __init__(self, **args):
         self.builder = Gtk.Builder()
-        self.builder.add_from_file('interface.ui')
-        self.builder.connect_signal(self)
+        self.builder.add_from_file('/home/frederico/virtualenvs/pygi/pygi/interface.ui')
+        self.builder.connect_signals(self)
 
     # destroy
-    def destroy(self, *args):
+    def destroy(self, **args):
         Gtk.main_quit()
 
     # Run
-    def Run(self, *args):
+    def Run(self, **args):
         self.builder.get_object('window1')
         Gtk.main()
 
